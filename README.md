@@ -107,7 +107,7 @@ Other Style Guides
  <a name="references--prefer-let-const"></a><a name="2.1"></a>
  - [2.1](#references--prefer-let-const) Use `const` or `let` for all of your references; avoid using `var`.
  
- > Why? `var` is an old construct and has a rather weird function scoping instead of block scoping.
+    > Why? `var` is an old construct and has a rather weird function scoping instead of block scoping.
 
     ```javascript
     // bad
