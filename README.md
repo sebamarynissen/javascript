@@ -16,7 +16,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
   1. [Arrow Functions](#arrow-functions)
   1. [Classes & Constructors](#classes--constructors)
   1. [Modules](#modules)
-  1. [Async/await](#async-await)
+  1. [Async/await](#async--await)
   1. [Properties](#properties)
   1. [Variables](#variables)
   1. [Hoisting](#hoisting)
@@ -177,7 +177,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.5"></a>
-  - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
+  - [3.5](#objects--grouped-shorthand) Prefer grouping your shorthand properties at the beginning of your object declaration, unless it is not "natural" to do it this way.
 
     > Why? It’s easier to tell which properties are using the shorthand.
 
@@ -204,6 +204,14 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
       episodeThree: 3,
       mayTheFourth: 4,
     };
+
+    // ok
+    let person = {
+      firstName: 'Luke',
+      lastName: 'SkyWalker',
+      age,
+    };
+
     ```
 
   <a name="objects--quoted-props"></a><a name="3.6"></a>
@@ -213,14 +221,14 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     // bad
-    const bad = {
+    let bad = {
       'foo': 3,
       'bar': 4,
       'data-blah': 5,
     };
 
     // good
-    const good = {
+    let good = {
       foo: 3,
       bar: 4,
       'data-blah': 5,
@@ -1482,20 +1490,20 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     // bad
-    const items = getItems(),
+    let items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
 
     // bad
     // (compare to above, and try to spot the mistake)
-    const items = getItems(),
+    conletst items = getItems(),
         goSportsTeam = true;
         dragonball = 'z';
 
     // good
-    const items = getItems();
-    const goSportsTeam = true;
-    const dragonball = 'z';
+    let items = getItems();
+    let goSportsTeam = true;
+    let dragonball = 'z';
     ```
 
   <a name="variables--const-let-group"></a><a name="13.3"></a>
@@ -2522,12 +2530,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
 
     // good
-    let foo = jsonData
-      && jsonData.foo
-      && jsonData.foo.bar
-      && jsonData.foo.bar.baz
-      && jsonData.foo.bar.baz.quux
-      && jsonData.foo.bar.baz.quux.xyzzy;
+    let foo = jsonData &&
+      jsonData.foo &&
+      jsonData.foo.bar &&
+      jsonData.foo.bar.baz &&
+      jsonData.foo.bar.baz.quux &&
+      jsonData.foo.bar.baz.quux.xyzzy;
 
     // good
     $.ajax({
