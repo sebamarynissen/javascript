@@ -116,21 +116,21 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
 
     function getKey(k) {
-      return `a key named ${k}`;
+        return `a key named ${k}`;
     }
 
     // bad
     let obj = {
-      id: 5,
-      name: 'San Francisco',
+        id: 5,
+        name: 'San Francisco',
     };
     obj[getKey('enabled')] = true;
 
     // good
     let obj = {
-      id: 5,
-      name: 'San Francisco',
-      [getKey('enabled')]: true,
+        id: 5,
+        name: 'San Francisco',
+        [getKey('enabled')]: true,
     };
     ```
 
@@ -140,20 +140,20 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let atom = {
-      value: 1,
+        value: 1,
 
-      addValue: function (value) {
-        return atom.value + value;
-      },
+        addValue: function (value) {
+            return atom.value + value;
+        },
     };
 
     // good
     let atom = {
-      value: 1,
+        value: 1,
 
-      addValue(value) {
-        return atom.value + value;
-      },
+        addValue(value) {
+            return atom.value + value;
+        },
     };
     ```
 
@@ -167,12 +167,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     let obj = {
-      lukeSkywalker: lukeSkywalker,
+        lukeSkywalker: lukeSkywalker,
     };
 
     // good
     let obj = {
-      lukeSkywalker,
+        lukeSkywalker,
     };
     ```
 
@@ -187,29 +187,29 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     let obj = {
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      lukeSkywalker,
-      episodeThree: 3,
-      mayTheFourth: 4,
-      anakinSkywalker,
+        episodeOne: 1,
+        twoJediWalkIntoACantina: 2,
+        lukeSkywalker,
+        episodeThree: 3,
+        mayTheFourth: 4,
+        anakinSkywalker,
     };
 
     // good
     let obj = {
-      lukeSkywalker,
-      anakinSkywalker,
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      episodeThree: 3,
-      mayTheFourth: 4,
+        lukeSkywalker,
+        anakinSkywalker,
+        episodeOne: 1,
+        twoJediWalkIntoACantina: 2,
+        episodeThree: 3,
+        mayTheFourth: 4,
     };
 
     // ok
     let person = {
-      firstName: 'Luke',
-      lastName: 'SkyWalker',
-      age,
+        firstName: 'Luke',
+        lastName: 'SkyWalker',
+        age,
     };
 
     ```
@@ -222,16 +222,16 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let bad = {
-      'foo': 3,
-      'bar': 4,
-      'data-blah': 5,
+        'foo': 3,
+        'bar': 4,
+        'data-blah': 5,
     };
 
     // good
     let good = {
-      foo: 3,
-      bar: 4,
-      'data-blah': 5,
+        foo: 3,
+        bar: 4,
+        'data-blah': 5,
     };
     ```
 
@@ -313,7 +313,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     let i;
 
     for (i = 0; i < len; i += 1) {
-      itemsCopy[i] = items[i];
+        itemsCopy[i] = items[i];
     }
 
     // good
@@ -364,8 +364,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // good
     [1, 2, 3].map((x) => {
-      let y = x + 1;
-      return x * y;
+        let y = x + 1;
+        return x * y;
     });
 
     // good
@@ -373,7 +373,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad - no returned value means `acc` becomes undefined after the first iteration
     [[0, 1], [2, 3], [4, 5]].reduce((acc, item, index) => {
-      let flatten = acc.concat(item);
+        let flatten = acc.concat(item);
     });
 
     // good
@@ -384,22 +384,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     inbox.filter((msg) => {
-      let { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      } else {
-        return false;
-      }
+        let { subject, author } = msg;
+        if (subject === 'Mockingbird') {
+            return author === 'Harper Lee';
+        } else {
+            return false;
+        }
     });
 
     // good
     inbox.filter((msg) => {
-      let { subject, author } = msg;
-      if (subject === 'Mockingbird') {
-        return author === 'Harper Lee';
-      }
+        let { subject, author } = msg;
+        if (subject === 'Mockingbird') {
+            return author === 'Harper Lee';
+        }
 
-      return false;
+        return false;
     });
     ```
 
@@ -409,34 +409,34 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let arr = [
-      [0, 1], [2, 3], [4, 5],
+        [0, 1], [2, 3], [4, 5],
     ];
 
     let objectInArray = [{
-      id: 1,
+        id: 1,
     }, {
-      id: 2,
+        id: 2,
     }];
 
     let numberInArray = [
-      1, 2,
+        1, 2,
     ];
 
     // good
     let arr = [[0, 1], [2, 3], [4, 5]];
 
     let objectInArray = [
-      {
-        id: 1,
-      },
-      {
-        id: 2,
-      },
+        {
+            id: 1,
+        },
+        {
+            id: 2,
+        },
     ];
 
     let numberInArray = [
-      1,
-      2,
+        1,
+        2,
     ];
     ```
 
@@ -452,21 +452,21 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function getFullName(user) {
-      let firstName = user.firstName;
-      let lastName = user.lastName;
+        let firstName = user.firstName;
+        let lastName = user.lastName;
 
-      return `${firstName} ${lastName}`;
+        return `${firstName} ${lastName}`;
     }
 
     // good
     function getFullName(user) {
-      let { firstName, lastName } = user;
-      return `${firstName} ${lastName}`;
+        let { firstName, lastName } = user;
+        return `${firstName} ${lastName}`;
     }
 
     // best
     function getFullName({ firstName, lastName }) {
-      return `${firstName} ${lastName}`;
+        return `${firstName} ${lastName}`;
     }
     ```
 
@@ -492,8 +492,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function processInput(input) {
-      // then a miracle occurs
-      return [left, right, top, bottom];
+        // then a miracle occurs
+        return [left, right, top, bottom];
     }
 
     // the caller needs to think about the order of return data
@@ -501,8 +501,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     function processInput(input) {
-      // then a miracle occurs
-      return { left, right, top, bottom };
+        // then a miracle occurs
+        return { left, right, top, bottom };
     }
 
     // the caller selects only the data they need
@@ -556,22 +556,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function sayHi(name) {
-      return 'How are you, ' + name + '?';
+        return 'How are you, ' + name + '?';
     }
 
     // bad
     function sayHi(name) {
-      return ['How are you, ', name, '?'].join('');
+        return ['How are you, ', name, '?'].join('');
     }
 
     // bad
     function sayHi(name) {
-      return `How are you, ${name}?`;
+        return `How are you, ${name}?`;
     }
 
     // good
     function sayHi(name) {
-      return `How are you, ${ name }?`;
+        return `How are you, ${ name }?`;
     }
     ```
 
@@ -603,12 +603,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     const foo = function () {
-      // ...
+        // ...
     };
 
     // good
     function foo() {
-      // ...
+        // ...
     }
     ```
 
@@ -620,7 +620,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // immediately-invoked function expression (IIFE)
     (function () {
-      console.log('Welcome to the Internet. Please follow me.');
+        console.log('Welcome to the Internet. Please follow me.');
     }());
     ```
 
@@ -633,17 +633,17 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if (currentUser) {
-      function test() {
-        console.log('Nope.');
-      }
+        function test() {
+            console.log('Nope.');
+        }
     }
 
     // good
     let test;
     if (currentUser) {
-      test = () => {
-        console.log('Yup.');
-      };
+        test = () => {
+            console.log('Yup.');
+        };
     }
     ```
 
@@ -653,12 +653,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function foo(name, options, arguments) {
-      // ...
+        // ...
     }
 
     // good
     function foo(name, options, args) {
-      // ...
+        // ...
     }
     ```
 
@@ -670,13 +670,13 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function concatenateAll() {
-      let args = Array.prototype.slice.call(arguments);
-      return args.join('');
+        let args = Array.prototype.slice.call(arguments);
+        return args.join('');
     }
 
     // good
     function concatenateAll(...args) {
-      return args.join('');
+        return args.join('');
     }
     ```
 
@@ -686,24 +686,24 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // really bad
     function handleThings(opts) {
-      // No! We shouldn’t mutate function arguments.
-      // Double bad: if opts is falsy it'll be set to an object which may
-      // be what you want but it can introduce subtle bugs.
-      opts = opts || {};
-      // ...
+        // No! We shouldn’t mutate function arguments.
+        // Double bad: if opts is falsy it'll be set to an object which may
+        // be what you want but it can introduce subtle bugs.
+        opts = opts || {};
+        // ...
     }
 
     // still bad
     function handleThings(opts) {
-      if (opts === void 0) {
-        opts = {};
-      }
-      // ...
+        if (opts === void 0) {
+            opts = {};
+        }
+        // ...
     }
 
     // good
     function handleThings(opts = {}) {
-      // ...
+        // ...
     }
     ```
 
@@ -716,7 +716,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     let b = 1;
     // bad
     function count(a = b++) {
-      console.log(a);
+        console.log(a);
     }
     count();  // 1
     count();  // 2
@@ -730,12 +730,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function handleThings(opts = {}, name) {
-      // ...
+        // ...
     }
 
     // good
     function handleThings(name, opts = {}) {
-      // ...
+        // ...
     }
     ```
 
@@ -776,12 +776,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function f1(obj) {
-      obj.key = 1;
+        obj.key = 1;
     }
 
     // good
     function f2(obj) {
-      const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
+        const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
     }
     ```
 
@@ -793,23 +793,23 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function f1(a) {
-      a = 1;
-      // ...
+        a = 1;
+        // ...
     }
 
     function f2(a) {
-      if (!a) { a = 1; }
-      // ...
+        if (!a) { a = 1; }
+        // ...
     }
 
     // good
     function f3(a) {
-      let b = a || 1;
-      // ...
+        let b = a || 1;
+        // ...
     }
 
     function f4(a = 1) {
-      // ...
+        // ...
     }
     ```
 
@@ -842,28 +842,28 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     function foo(bar,
                  baz,
                  quux) {
-      // ...
+        // ...
     }
 
     // good
     function foo(
-      bar,
-      baz,
-      quux,
+        bar,
+        baz,
+        quux,
     ) {
-      // ...
+        // ...
     }
 
     // bad
     console.log(foo,
-      bar,
-      baz);
+        bar,
+        baz);
 
     // good
     console.log(
-      foo,
-      bar,
-      baz,
+        foo,
+        bar,
+        baz,
     );
     ```
 
@@ -879,14 +879,14 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     [1, 2, 3].map(function (x) {
-      let y = x + 1;
-      return x * y;
+        let y = x + 1;
+        return x * y;
     });
 
     // good
     [1, 2, 3].map((x) => {
-      let y = x + 1;
-      return x * y;
+        let y = x + 1;
+        return x * y;
     });
     ```
 
@@ -898,8 +898,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     [1, 2, 3].map((number) => {
-      let nextNumber = number + 1;
-      `A string containing the ${nextNumber}.`;
+        let nextNumber = number + 1;
+        `A string containing the ${nextNumber}.`;
     });
 
     // good
@@ -907,21 +907,21 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     [1, 2, 3].map((number) => {
-      let nextNumber = number + 1;
-      return `A string containing the ${nextNumber}.`;
+        let nextNumber = number + 1;
+        return `A string containing the ${nextNumber}.`;
     });
 
     // good
     [1, 2, 3].map((number, index) => ({
-      [index]: number,
+        [index]: number,
     }));
 
     // No implicit return with side effects
     function foo(callback) {
-      let val = callback();
-      if (val === true) {
-        // Do something if callback returns true
-      }
+        let val = callback();
+        if (val === true) {
+            // Do something if callback returns true
+        }
     }
 
     let bool = false;
@@ -931,7 +931,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     foo(() => {
-      bool = true;
+        bool = true;
     });
     ```
 
@@ -943,17 +943,17 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     ['get', 'post', 'put'].map((httpMethod) => Object.prototype.hasOwnProperty.call(
-        httpMagicObjectWithAVeryLongName,
-        httpMethod,
-      )
+            httpMagicObjectWithAVeryLongName,
+            httpMethod,
+        )
     );
 
     // good
     ['get', 'post', 'put'].map((httpMethod) => {
-      return Object.prototype.hasOwnProperty.call(
-        httpMagicObjectWithAVeryLongName,
-        httpMethod,
-      );
+        return Object.prototype.hasOwnProperty.call(
+            httpMagicObjectWithAVeryLongName,
+            httpMethod,
+        );
     });
     ```
 
@@ -972,8 +972,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     const itemHeight = (item) => {
-      const { height, largeSize, smallSize } = item;
-      return height <= 256 ? largeSize : smallSize;
+        const { height, largeSize, smallSize } = item;
+        return height <= 256 ? largeSize : smallSize;
     };
     ```
 
@@ -983,16 +983,16 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     foo =>
-      bar;
+        bar;
 
     foo =>
-      (bar);
+        (bar);
 
     // good
     foo => bar;
     foo => (bar);
     foo => (
-       bar
+        bar
     );
     ```
 
@@ -1008,24 +1008,24 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function Queue(contents = []) {
-      this.queue = [...contents];
+        this.queue = [...contents];
     }
     Queue.prototype.pop = function () {
-      let value = this.queue[0];
-      this.queue.splice(0, 1);
-      return value;
+        let value = this.queue[0];
+        this.queue.splice(0, 1);
+        return value;
     };
 
     // good
     class Queue {
-      constructor(contents = []) {
-        this.queue = [...contents];
-      }
-      pop() {
-        let value = this.queue[0];
-        this.queue.splice(0, 1);
-        return value;
-      }
+        constructor(contents = []) {
+            this.queue = [...contents];
+        }
+        pop() {
+            let value = this.queue[0];
+            this.queue.splice(0, 1);
+            return value;
+        }
     }
     ```
 
@@ -1038,18 +1038,18 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // bad
     const inherits = require('inherits');
     function PeekableQueue(contents) {
-      Queue.apply(this, contents);
+        Queue.apply(this, contents);
     }
     inherits(PeekableQueue, Queue);
     PeekableQueue.prototype.peek = function () {
-      return this.queue[0];
+        return this.queue[0];
     };
 
     // good
     class PeekableQueue extends Queue {
-      peek() {
-        return this.queue[0];
-      }
+        peek() {
+            return this.queue[0];
+        }
     }
     ```
 
@@ -1059,12 +1059,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     Jedi.prototype.jump = function () {
-      this.jumping = true;
-      return true;
+        this.jumping = true;
+        return true;
     };
 
     Jedi.prototype.setHeight = function (height) {
-      this.height = height;
+        this.height = height;
     };
 
     const luke = new Jedi();
@@ -1073,22 +1073,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     class Jedi {
-      jump() {
-        this.jumping = true;
-        return this;
-      }
+        jump() {
+            this.jumping = true;
+            return this;
+        }
 
-      setHeight(height) {
-        this.height = height;
-        return this;
-      }
+        setHeight(height) {
+            this.height = height;
+            return this;
+        }
     }
 
     let luke = new Jedi();
 
     luke
-      .jump()
-      .setHeight(20);
+        .jump()
+        .setHeight(20);
     ```
 
   <a name="constructors--tostring"></a><a name="9.4"></a>
@@ -1096,17 +1096,17 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     class Jedi {
-      constructor(options = {}) {
-        this.name = options.name || 'no name';
-      }
+        constructor(options = {}) {
+            this.name = options.name || 'no name';
+        }
 
-      getName() {
-        return this.name;
-      }
+        getName() {
+            return this.name;
+        }
 
-      toString() {
-        return `Jedi - ${ this.getName() }`;
-      }
+        toString() {
+            return `Jedi - ${ this.getName() }`;
+        }
     }
     ```
 
@@ -1116,26 +1116,26 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     class Jedi {
-      constructor() {}
+        constructor() {}
 
-      getName() {
-        return this.name;
-      }
+        getName() {
+            return this.name;
+        }
     }
 
     // bad
     class Rey extends Jedi {
-      constructor(...args) {
-        super(...args);
-      }
+        constructor(...args) {
+            super(...args);
+        }
     }
 
     // good
     class Rey extends Jedi {
-      constructor(...args) {
-        super(...args);
-        this.name = 'Rey';
-      }
+        constructor(...args) {
+            super(...args);
+            this.name = 'Rey';
+        }
     }
     ```
 
@@ -1147,18 +1147,18 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     class Foo {
-      bar() { return 1; }
-      bar() { return 2; }
+        bar() { return 1; }
+        bar() { return 2; }
     }
 
     // good
     class Foo {
-      bar() { return 1; }
+        bar() { return 1; }
     }
 
     // good
     class Foo {
-      bar() { return 2; }
+        bar() { return 2; }
     }
     ```
 
@@ -1168,30 +1168,30 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     class Foo {
-      bar() {
-        console.log('bar');
-      }
+        bar() {
+            console.log('bar');
+        }
     }
 
     // good - this is used
     class Foo {
-      bar() {
-        console.log(this.bar);
-      }
+        bar() {
+            console.log(this.bar);
+        }
     }
 
     // good - constructor is exempt
     class Foo {
-      constructor() {
-        // ...
-      }
+        constructor() {
+            // ...
+        }
     }
 
     // good - static methods aren't expected to use this
     class Foo {
-      static bar() {
-        console.log('bar');
-      }
+        static bar() {
+            console.log('bar');
+        }
     }
     ```
 
@@ -1264,8 +1264,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     import foo, {
-      named1,
-      named2,
+        named1,
+        named2,
     } from 'foo';
     ```
 
@@ -1328,11 +1328,11 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     import {
-      longNameA,
-      longNameB,
-      longNameC,
-      longNameD,
-      longNameE,
+        longNameA,
+        longNameB,
+        longNameC,
+        longNameD,
+        longNameE,
     } from 'path';
     ```
 
@@ -1378,29 +1378,29 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function calculate() {
-      return prepare().then(structure => analysis(structure));
+        return prepare().then(structure => analysis(structure));
     }
 
     // bad
     class Structure() {
-      calculate() {
-        return this.prepare().then(() => this.analysis()).then(() => this);
-      }
+        calculate() {
+            return this.prepare().then(() => this.analysis()).then(() => this);
+        }
     }
 
     // good
     async function calculate() {
-      let structure = await prepare;
-      return await analysis(structure);
+        let structure = await prepare;
+        return await analysis(structure);
     }
 
     // good
     class Structure {
-      async calculate() {
-        await this.prepare();
-        await this.analysis();
-        return this;
-      }
+        async calculate() {
+            await this.prepare();
+            await this.analysis();
+            return this;
+        }
     }
     ```
 
@@ -1410,14 +1410,14 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     async function calculate(structure) {
-      return await analysis(await prepare(structure));
+        return await analysis(await prepare(structure));
     }
 
     // good
     async function calculate(structure) {
-      let prepared = await prepare(structure);
-      let results = await analysis(prepared);
-      return results;
+        let prepared = await prepare(structure);
+        let results = await analysis(prepared);
+        return results;
     }
     ```
 
@@ -1430,8 +1430,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     let luke = {
-      jedi: true,
-      age: 28,
+        jedi: true,
+        age: 28,
     };
 
     // bad
@@ -1446,12 +1446,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     let luke = {
-      jedi: true,
-      age: 28,
+        jedi: true,
+        age: 28,
     };
 
     function getProp(prop) {
-      return luke[prop];
+        return luke[prop];
     }
 
     let isJedi = getProp('jedi');
@@ -1540,34 +1540,34 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad - unnecessary function call
     function checkName(hasName) {
-      let name = getName();
+        let name = getName();
 
-      if (hasName === 'test') {
-        return false;
-      }
+        if (hasName === 'test') {
+            return false;
+        }
 
-      if (name === 'test') {
-        this.setName('');
-        return false;
-      }
+        if (name === 'test') {
+            this.setName('');
+            return false;
+        }
 
-      return name;
+        return name;
     }
 
     // good
     function checkName(hasName) {
-      if (hasName === 'test') {
-        return false;
-      }
+        if (hasName === 'test') {
+            return false;
+        }
 
-      let name = getName();
+        let name = getName();
 
-      if (name === 'test') {
-        this.setName('');
-        return false;
-      }
+        if (name === 'test') {
+            this.setName('');
+            return false;
+        }
 
-      return name;
+        return name;
     }
     ```
 
@@ -1579,11 +1579,11 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     (function example() {
-      // JavaScript interprets this as
-      // let a = ( b = ( c = 1 ) );
-      // The let keyword only applies to variable a; variables b and c become
-      // global variables.
-      let a = b = c = 1;
+        // JavaScript interprets this as
+        // let a = ( b = ( c = 1 ) );
+        // The let keyword only applies to variable a; variables b and c become
+        // global variables.
+        let a = b = c = 1;
     }());
 
     console.log(a); // throws ReferenceError
@@ -1592,9 +1592,9 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     (function example() {
-      let a = 1;
-      let b = a;
-      let c = a;
+        let a = 1;
+        let b = a;
+        let c = a;
     }());
 
     console.log(a); // throws ReferenceError
@@ -1620,11 +1620,11 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     let sum = 0;
     let truthyCount = 0;
     for (let i = 0; i < array.length; i++) {
-      let value = array[i];
-      sum += value;
-      if (value) {
-        truthyCount++;
-      }
+        let value = array[i];
+        sum += value;
+        if (value) {
+            truthyCount++;
+        }
     }
 
     // good
@@ -1646,15 +1646,15 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let foo =
-      superLongLongLongLongLongLongLongLongFunctionName();
+        superLongLongLongLongLongLongLongLongFunctionName();
 
     // bad
     let foo
-      = 'superLongLongLongLongLongLongLongLongString';
+        = 'superLongLongLongLongLongLongLongLongString';
 
     // good
     let foo = (
-      superLongLongLongLongLongLongLongLongFunctionName()
+        superLongLongLongLongLongLongLongLongFunctionName()
     );
 
     // good
@@ -1687,7 +1687,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // good
 
     function getXPlusY(x, y) {
-      return x + y;
+        return x + y;
     }
 
     let x = 1;
@@ -1712,7 +1712,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // we know this wouldn’t work (assuming there
     // is no notDefined global variable)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+        console.log(notDefined); // => throws a ReferenceError
     }
 
     // creating a variable declaration after you
@@ -1720,24 +1720,24 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // variable hoisting. Note: the assignment
     // value of `true` is not hoisted.
     function example() {
-      console.log(declaredButNotAssigned); // => undefined
-      var declaredButNotAssigned = true;
+        console.log(declaredButNotAssigned); // => undefined
+        var declaredButNotAssigned = true;
     }
 
     // the interpreter is hoisting the variable
     // declaration to the top of the scope,
     // which means our example could be rewritten as:
     function example() {
-      let declaredButNotAssigned;
-      console.log(declaredButNotAssigned); // => undefined
-      declaredButNotAssigned = true;
+        let declaredButNotAssigned;
+        console.log(declaredButNotAssigned); // => undefined
+        declaredButNotAssigned = true;
     }
 
     // using const and let
     function example() {
-      console.log(declaredButNotAssigned); // => throws a ReferenceError
-      console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
-      const declaredButNotAssigned = true;
+        console.log(declaredButNotAssigned); // => throws a ReferenceError
+        console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
+        const declaredButNotAssigned = true;
     }
     ```
 
@@ -1746,13 +1746,13 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     function example() {
-      console.log(anonymous); // => undefined
+        console.log(anonymous); // => undefined
 
-      anonymous(); // => TypeError anonymous is not a function
+        anonymous(); // => TypeError anonymous is not a function
 
-      var anonymous = function () {
-        console.log('anonymous function expression');
-      };
+        var anonymous = function () {
+            console.log('anonymous function expression');
+        };
     }
     ```
 
@@ -1761,27 +1761,27 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      superPower(); // => ReferenceError superPower is not defined
+        superPower(); // => ReferenceError superPower is not defined
 
-      var named = function superPower() {
-        console.log('Flying');
-      };
+        var named = function superPower() {
+            console.log('Flying');
+        };
     }
 
     // the same is true when the function name
     // is the same as the variable name.
     function example() {
-      console.log(named); // => undefined
+        console.log(named); // => undefined
 
-      named(); // => TypeError named is not a function
+        named(); // => TypeError named is not a function
 
-      var named = function named() {
-        console.log('named');
-      };
+        var named = function named() {
+            console.log('named');
+        };
     }
     ```
 
@@ -1790,11 +1790,11 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     function example() {
-      superPower(); // => Flying
+        superPower(); // => Flying
 
-      function superPower() {
-        console.log('Flying');
-      }
+        function superPower() {
+            console.log('Flying');
+        }
     }
     ```
 
@@ -1819,8 +1819,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     if ([0] && []) {
-      // true
-      // an array (even an empty one) is an object, objects will evaluate to true
+        // true
+        // an array (even an empty one) is an object, objects will evaluate to true
     }
     ```
 
@@ -1830,32 +1830,32 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if (isValid === true) {
-      // ...
+        // ...
     }
 
     // good
     if (isValid) {
-      // ...
+        // ...
     }
 
     // bad
     if (name) {
-      // ...
+        // ...
     }
 
     // good
     if (name !== '') {
-      // ...
+        // ...
     }
 
     // bad
     if (collection.length) {
-      // ...
+        // ...
     }
 
     // good
     if (collection.length > 0) {
-      // ...
+        // ...
     }
     ```
 
@@ -1870,43 +1870,43 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     switch (foo) {
-      case 1:
-        let x = 1;
-        break;
-      case 2:
-        const y = 2;
-        break;
-      case 3:
-        function f() {
-          // ...
-        }
-        break;
-      default:
-        class C {}
+        case 1:
+            let x = 1;
+            break;
+        case 2:
+            const y = 2;
+            break;
+        case 3:
+            function f() {
+                // ...
+            }
+            break;
+        default:
+            class C {}
     }
 
     // good
     switch (foo) {
-      case 1: {
-        let x = 1;
-        break;
-      }
-      case 2: {
-        const y = 2;
-        break;
-      }
-      case 3: {
-        function f() {
-          // ...
+        case 1: {
+            let x = 1;
+            break;
         }
-        break;
-      }
-      case 4:
-        bar();
-        break;
-      default: {
-        class C {}
-      }
+        case 2: {
+            const y = 2;
+            break;
+        }
+        case 3: {
+            function f() {
+                // ...
+            }
+            break;
+        }
+        case 4:
+            bar();
+            break;
+        default: {
+            class C {}
+        }
     }
     ```
 
@@ -1916,16 +1916,16 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let foo = maybe1 > maybe2
-      ? "bar"
-      : value1 > value2 ? "baz" : null;
+        ? "bar"
+        : value1 > value2 ? "baz" : null;
 
     // split into 2 separated ternary expressions
     let maybeNull = value1 > value2 ? 'baz' : null;
 
     // better
     let foo = maybe1 > maybe2
-      ? 'bar'
-      : maybeNull;
+        ? 'bar'
+        : maybeNull;
 
     // best
     let foo = maybe1 > maybe2 ? 'bar' : maybeNull;
@@ -1962,7 +1962,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // bad
     // one may be confused into thinking (a || b) && c
     if (a || b && c) {
-      return d;
+        return d;
     }
 
     // bad
@@ -1976,7 +1976,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     if (a || (b && c)) {
-      return d;
+        return d;
     }
 
     // good
@@ -1993,14 +1993,14 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if (test)
-      return false;
+        return false;
 
     // good
     if (test) return false;
 
     // good
     if (test) {
-      return false;
+        return false;
     }
 
     // bad
@@ -2008,7 +2008,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     function bar() {
-      return false;
+        return false;
     }
     ```
 
@@ -2018,19 +2018,19 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     }
     else {
-      thing3();
+        thing3();
     }
 
     // good
     if (test) {
-      thing1();
-      thing2();
+        thing1();
+        thing2();
     } else {
-      thing3();
+        thing3();
     }
     ```
 
@@ -2044,49 +2044,49 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if ((foo === 123 || bar === 'abc') && doesItLookGoodWhenItBecomesThatLong() && isThisReallyHappening()) {
-      thing1();
+        thing1();
     }
 
     // bad
     if (foo === 123 &&
-      bar === 'abc') {
-      thing1();
+        bar === 'abc') {
+        thing1();
     }
 
     // bad
     if (foo === 123
-      && bar === 'abc') {
-      thing1();
+        && bar === 'abc') {
+        thing1();
     }
 
     // bad
     if (
-      foo === 123
-      && bar === 'abc'
+        foo === 123
+        && bar === 'abc'
     ) {
-      thing1();
+        thing1();
     }
 
     // good
     if (
-      foo === 123 &&
-      bar === 'abc'
+        foo === 123 &&
+        bar === 'abc'
     ) {
-      thing1();
+        thing1();
     }
 
     // good
     if (
-      (foo === 123 || bar === 'abc') &&
-      doesItLookGoodWhenItBecomesThatLong() && 
-      isThisReallyHappening()
+        (foo === 123 || bar === 'abc') &&
+        doesItLookGoodWhenItBecomesThatLong() && 
+        isThisReallyHappening()
     ) {
-      thing1();
+        thing1();
     }
 
     // good
     if (foo === 123 && bar === 'abc') {
-      thing1();
+        thing1();
     }
     ```
 
@@ -2099,7 +2099,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     if (!isRunning) {
-      startRunning();
+        startRunning();
     }
     ```
 
@@ -2118,9 +2118,9 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
      */
     function make(tag) {
 
-      // ...
+        // ...
 
-      return element;
+        return element;
     }
 
     // good
@@ -2128,9 +2128,9 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // based on the passed in tag name
     function make(tag) {
 
-      // ...
+        // ...
 
-      return element;
+        return element;
     }
     ```
 
@@ -2147,29 +2147,29 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     function getType() {
-      console.log('fetching type...');
-      // set the default type to 'no type'
-      let type = this.type || 'no type';
+        console.log('fetching type...');
+        // set the default type to 'no type'
+        let type = this.type || 'no type';
 
-      return type;
+        return type;
     }
 
     // good
     function getType() {
-      console.log('fetching type...');
+        console.log('fetching type...');
 
-      // set the default type to 'no type'
-      let type = this.type || 'no type';
+        // set the default type to 'no type'
+        let type = this.type || 'no type';
 
-      return type;
+        return type;
     }
 
     // also good
     function getType() {
-      // set the default type to 'no type'
-      let type = this.type || 'no type';
+        // set the default type to 'no type'
+        let type = this.type || 'no type';
 
-      return type;
+        return type;
     }
     ```
 
@@ -2194,12 +2194,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     class Calculator extends Abacus {
-      constructor() {
-        super();
+        constructor() {
+            super();
 
-        // FIXME: shouldn’t use a global here
-        total = 0;
-      }
+            // FIXME: shouldn’t use a global here
+            total = 0;
+        }
     }
     ```
 
@@ -2208,12 +2208,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     class Calculator extends Abacus {
-      constructor() {
-        super();
+        constructor() {
+            super();
 
-        // TODO: total should be configurable by an options param
-        this.total = 0;
-      }
+            // TODO: total should be configurable by an options param
+            this.total = 0;
+        }
     }
     ```
 
@@ -2247,24 +2247,24 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function test(){
-      console.log('test');
+        console.log('test');
     }
 
     // good
     function test() {
-      console.log('test');
+        console.log('test');
     }
 
     // bad
     dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+        age: '1 year',
+        breed: 'Bernese Mountain Dog',
     });
 
     // good
     dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog',
+        age: '1 year',
+        breed: 'Bernese Mountain Dog',
     });
     ```
 
@@ -2274,22 +2274,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if(isJedi) {
-      fight ();
+        fight ();
     }
 
     // good
     if (isJedi) {
-      fight();
+        fight();
     }
 
     // bad
     function fight () {
-      console.log ('Swooosh!');
+        console.log ('Swooosh!');
     }
 
     // good
     function fight() {
-      console.log('Swooosh!');
+        console.log('Swooosh!');
     }
     ```
 
@@ -2339,19 +2339,19 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     $('#items').
-      find('.selected').
-        highlight().
-        end().
-      find('.open').
-        updateCount();
+        find('.selected').
+            highlight().
+            end().
+        find('.open').
+            updateCount();
 
     // good
     $('#items')
-      .find('.selected')
-        .highlight()
-        .end()
-      .find('.open')
-        .updateCount();
+        .find('.selected')
+            .highlight()
+            .end()
+        .find('.open')
+            .updateCount();
 
     // bad
     let leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
@@ -2361,13 +2361,13 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     let leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append('svg:svg')
-        .classed('led', true)
-        .attr('width', (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', `translate(${ radius + margin },${ radius + margin })`)
-        .call(tron.led);
+            .data(data)
+        .enter().append('svg:svg')
+            .classed('led', true)
+            .attr('width', (radius + margin) * 2)
+        .append('svg:g')
+            .attr('transform', `translate(${ radius + margin },${ radius + margin })`)
+            .call(tron.led);
 
     // good
     let leds = stage.selectAll('.led').data(data);
@@ -2380,37 +2380,37 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // bad
     function bar() {
 
-      console.log(foo);
+        console.log(foo);
 
     }
 
     // bad
     if (baz) {
 
-      console.log(qux);
+        console.log(qux);
     } else {
-      console.log(foo);
+        console.log(foo);
 
     }
 
     // bad
     class Foo {
 
-      constructor(bar) {
-        this.bar = bar;
-      }
+        constructor(bar) {
+            this.bar = bar;
+        }
     }
 
     // good
     function bar() {
-      console.log(foo);
+        console.log(foo);
     }
 
     // good
     if (baz) {
-      console.log(qux);
+        console.log(qux);
     } else {
-      console.log(foo);
+        console.log(foo);
     }
     ```
 
@@ -2421,50 +2421,50 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     class Person {
-      constructor(fullName, email, birthday) {
-        this.fullName = fullName;
+        constructor(fullName, email, birthday) {
+            this.fullName = fullName;
 
 
-        this.email = email;
+            this.email = email;
 
 
-        this.setAge(birthday);
-      }
+            this.setAge(birthday);
+        }
 
 
-      setAge(birthday) {
-        let today = new Date();
+        setAge(birthday) {
+            let today = new Date();
 
 
-        let age = this.getAge(today, birthday);
+            let age = this.getAge(today, birthday);
 
 
-        this.age = age;
-      }
+            this.age = age;
+        }
 
 
-      getAge(today, birthday) {
-        // ..
-      }
+        getAge(today, birthday) {
+            // ..
+        }
     }
 
     // good
     class Person {
-      constructor(fullName, email, birthday) {
-        this.fullName = fullName;
-        this.email = email;
-        this.setAge(birthday);
-      }
+        constructor(fullName, email, birthday) {
+            this.fullName = fullName;
+            this.email = email;
+            this.setAge(birthday);
+        }
 
-      setAge(birthday) {
-        let today = new Date();
-        let age = getAge(today, birthday);
-        this.age = age;
-      }
+        setAge(birthday) {
+            let today = new Date();
+            let age = getAge(today, birthday);
+            this.age = age;
+        }
 
-      getAge(today, birthday) {
-        // ..
-      }
+        getAge(today, birthday) {
+            // ..
+        }
     }
     ```
 
@@ -2474,22 +2474,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function bar( foo ) {
-      return foo;
+        return foo;
     }
 
     // good
     function bar(foo) {
-      return foo;
+        return foo;
     }
 
     // bad
     if ( foo ) {
-      console.log(foo);
+        console.log(foo);
     }
 
     // good
     if (foo) {
-      console.log(foo);
+        console.log(foo);
     }
     ```
 
@@ -2531,20 +2531,20 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     let foo = jsonData &&
-      jsonData.foo &&
-      jsonData.foo.bar &&
-      jsonData.foo.bar.baz &&
-      jsonData.foo.bar.baz.quux &&
-      jsonData.foo.bar.baz.quux.xyzzy;
+        jsonData.foo &&
+        jsonData.foo.bar &&
+        jsonData.foo.bar.baz &&
+        jsonData.foo.bar.baz.quux &&
+        jsonData.foo.bar.baz.quux.xyzzy;
 
     // good
     $.ajax({
-      method: 'POST',
-      url: 'https://airbnb.com/',
-      data: { name: 'John' },
+        method: 'POST',
+        url: 'https://airbnb.com/',
+        data: { name: 'John' },
     })
-      .done(() => console.log('Congratulations!'))
-      .fail(() => console.log('You have failed this city.'));
+        .done(() => console.log('Congratulations!'))
+        .fail(() => console.log('You have failed this city.'));
     ```
 
   <a name="whitespace--block-spacing"></a>
@@ -2657,32 +2657,32 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let story = [
-        once
-      , upon
-      , aTime
+          once
+        , upon
+        , aTime
     ];
 
     // good
     let story = [
-      once,
-      upon,
-      aTime,
+        once,
+        upon,
+        aTime,
     ];
 
     // bad
     let hero = {
-        firstName: 'Ada'
-      , lastName: 'Lovelace'
-      , birthYear: 1815
-      , superPower: 'computers'
+          firstName: 'Ada'
+        , lastName: 'Lovelace'
+        , birthYear: 1815
+        , superPower: 'computers'
     };
 
     // good
     let hero = {
-      firstName: 'Ada',
-      lastName: 'Lovelace',
-      birthYear: 1815,
-      superPower: 'computers',
+        firstName: 'Ada',
+        lastName: 'Lovelace',
+        birthYear: 1815,
+        superPower: 'computers',
     };
     ```
 
@@ -2711,74 +2711,74 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     let hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
+        firstName: 'Dana',
+        lastName: 'Scully'
     };
 
     let heroes = [
-      'Batman',
-      'Superman'
+        'Batman',
+        'Superman'
     ];
 
     // good
     let hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
+        firstName: 'Dana',
+        lastName: 'Scully',
     };
 
     let heroes = [
-      'Batman',
-      'Superman',
+        'Batman',
+        'Superman',
     ];
 
     // bad
     function createHero(
-      firstName,
-      lastName,
-      inventorOf
+        firstName,
+        lastName,
+        inventorOf
     ) {
-      // does nothing
+        // does nothing
     }
 
     // good
     function createHero(
-      firstName,
-      lastName,
-      inventorOf,
+         firstName,
+        lastName,
+        inventorOf,
     ) {
-      // does nothing
+        // does nothing
     }
 
     // good (note that a comma must not appear after a "rest" element)
     function createHero(
-      firstName,
-      lastName,
-      inventorOf,
-      ...heroArgs
+        firstName,
+        lastName,
+        inventorOf,
+        ...heroArgs
     ) {
-      // does nothing
+        // does nothing
     }
 
     // bad
     createHero(
-      firstName,
-      lastName,
-      inventorOf
+        firstName,
+        lastName,
+        inventorOf
     );
 
     // good
     createHero(
-      firstName,
-      lastName,
-      inventorOf,
+        firstName,
+        lastName,
+        inventorOf,
     );
 
     // good (note that a comma must not appear after a "rest" element)
     createHero(
-      firstName,
-      lastName,
-      inventorOf,
-      ...heroArgs
+        firstName,
+        lastName,
+        inventorOf,
+        ...heroArgs
     );
     ```
 
@@ -2800,33 +2800,33 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // bad - raises exception
     let reaction = 'No! That’s impossible!'
     (async function meanwhileOnTheFalcon() {
-      // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
-      // ...
+        // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
+        // ...
     }())
 
     // bad - returns `undefined` instead of the value on the next line - always happens when `return` is on a line by itself because of ASI!
     function foo() {
-      return
-        'search your feelings, you know it to be foo'
+        return
+            'search your feelings, you know it to be foo'
     }
 
     // good
     let luke = {};
     let leia = {};
     [luke, leia].forEach((jedi) => {
-      jedi.father = 'vader';
+        jedi.father = 'vader';
     });
 
     // good
     let reaction = 'No! That’s impossible!';
     (async function meanwhileOnTheFalcon() {
-      // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
-      // ...
+        // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
+        // ...
     }());
 
     // good
     function foo() {
-      return 'search your feelings, you know it to be foo';
+        return 'search your feelings, you know it to be foo';
     }
     ```
 
@@ -2926,12 +2926,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function q() {
-      // ...
+        // ...
     }
 
     // good
     function query() {
-      // ...
+        // ...
     }
     ```
 
@@ -2955,22 +2955,22 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function user(options) {
-      this.name = options.name;
+        this.name = options.name;
     }
 
     let bad = new user({
-      name: 'nope',
+        name: 'nope',
     });
 
     // good
     class User {
-      constructor(options) {
-        this.name = options.name;
-      }
+        constructor(options) {
+            this.name = options.name;
+        }
     }
 
     let good = new User({
-      name: 'yup',
+        name: 'yup',
     });
     ```
 
@@ -2995,25 +2995,25 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     function foo() {
-      let self = this;
-      return function () {
-        console.log(self);
-      };
+        let self = this;
+        return function () {
+            console.log(self);
+        };
     }
 
     // bad
     function foo() {
-      let that = this;
-      return function () {
-        console.log(that);
-      };
+        let that = this;
+        return function () {
+            console.log(that);
+        };
     }
 
     // good
     function foo() {
-      return () => {
-        console.log(this);
-      };
+        return () => {
+            console.log(this);
+        };
     }
     ```
 
@@ -3023,7 +3023,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // file 1 contents
     class CheckBox {
-      // ...
+        // ...
     }
     export default CheckBox;
 
@@ -3050,7 +3050,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // # make-style-guide.js
     function makeStyleGuide() {
-      // ...
+        // ...
     }
 
     export default makeStyleGuide;
@@ -3061,8 +3061,8 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     const BuildsoftStyleGuide = {
-      es6: {
-      },
+        es6: {
+        },
     };
 
     export default BuildsoftStyleGuide;
@@ -3079,7 +3079,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad
     let HttpRequests = [
-      // ...
+        // ...
     ];
 
     // good
@@ -3087,12 +3087,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // good
     let HTTPRequests = [
-      // ...
+        // ...
     ];
 
     // also good
     let httpRequests = [
-      // ...
+        // ...
     ];
 
     // best
@@ -3100,7 +3100,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // best
     let requests = [
-      // ...
+        // ...
     ];
     ```
 
@@ -3133,12 +3133,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     // bad - unnecessarily uppercases key while adding no semantic value
     export const MAPPING = {
-      KEY: 'value'
+        KEY: 'value'
     };
 
     // good
     export const MAPPING = {
-      key: 'value'
+        key: 'value'
     };
     ```
 
@@ -3155,13 +3155,13 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // ok
     class Dragon {
-      get age() {
-        // ...
-      }
+        get age() {
+            // ...
+        }
 
-      set age(value) {
-        // ...
-      }
+        set age(value) {
+            // ...
+        }
     }
 
     ```
@@ -3172,12 +3172,12 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     ```javascript
     // bad
     if (!dragon.age()) {
-      return false;
+        return false;
     }
 
     // good
     if (!dragon.hasAge()) {
-      return false;
+        return false;
     }
     ```
 
@@ -3195,7 +3195,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // ...
 
     vm.$on('listingUpdated', (e, listingID) => {
-      // do something with listingID
+        // do something with listingID
     });
     ```
 
@@ -3208,7 +3208,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
     // ...
 
     vm.$on('listingUpdated', (e, data) => {
-      // do something with data.listingID
+        // do something with data.listingID
     });
     ```
 
@@ -3261,7 +3261,7 @@ This guide is based on the [Airbnb JavaScript Style Guide](https://github.com/ai
 
     ```javascript
     function foo() {
-      return true;
+        return true;
     }
     ```
 
